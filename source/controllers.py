@@ -4,6 +4,7 @@ import requests
 import re
 from .models import TechnicalSpecs
 from .models import BlurayRating
+from .models import RTRating
 
 
 def get_rt_rating():
@@ -15,10 +16,11 @@ def get_rt_rating():
     soup = BeautifulSoup(contents)
     items = []
     for item in soup.findAll(attrs={'itemprop': 'ratingValue'}):
-        items.append(item.get_text() + '\n')
+        items.append(item.get_text().strip('%'))
 
-    # Returns All critics / Top critics / Audience score
-    return items
+    ratings = RTRating(items)
+
+    return ratings
 
 
 def get_tech_spec():
@@ -46,11 +48,22 @@ def get_tech_spec():
 
     for i in range(len(cells)):
         if 'Negative Format' in cells[i].get_text():
-            tech_specs.negative_format = list(cells[i].find_next_sibling('td').stripped_strings)
+            tech_specs.negative_format = build_specification(cells[i])
         elif 'Cinematographic Process' in cells[i].get_text():
-            tech_specs.cinematographic_process = list(cells[i].find_next_sibling('td').stripped_strings)
+            tech_specs.cinematographic_process = build_specification(cells[i])
 
     return tech_specs
+
+
+def build_specification(cell):
+    specs = list(cell.find_next_sibling('td').stripped_strings)
+
+    output = []
+    ''' Strip newline characters left from stripped_strings'''
+    for spec in specs:
+        output.append(re.sub('\s+',' ',spec))
+
+    return output
 
 
 def get_bluray_rating():

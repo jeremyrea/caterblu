@@ -9,5 +9,5 @@ from source import controllers
 
 # Create your views here.
 def index(request):
-    return HttpResponse(controllers.get_bluray_rating())
+    return HttpResponse(str(controllers.get_rt_rating()) + str(controllers.get_bluray_rating()) + str(controllers.get_tech_spec()))
 
