@@ -1,6 +1,9 @@
 import requests
 import re
+import os
 
+from amazon.api import AmazonAPI
+import bottlenose
 from bs4 import BeautifulSoup
 from .models import TechnicalSpecs
 from .models import BlurayRating
@@ -10,7 +13,7 @@ from .models import RTRating
 def get_rt_rating(title):
     domain = "http://www.rottentomatoes.com/"
     query = "m/" + title.replace(' ', '_')
-    url = domain+query
+    url = domain + query
 
     r = requests.get(url)
     contents = r.text
@@ -63,7 +66,7 @@ def build_specification(cell):
     output = []
     ''' Strip newline characters left from stripped_strings'''
     for spec in specs:
-        output.append(re.sub('\s+',' ',spec))
+        output.append(re.sub('\s+', ' ', spec))
 
     return output
 
@@ -71,14 +74,14 @@ def build_specification(cell):
 def get_bluray_rating(title):
     domain = 'http://www.blu-ray.com/'
     search = 'search/?'
-    payload = 'quicksearch=1&quicksearch_keyword='+title.replace(' ', '+')
+    payload = 'quicksearch=1&quicksearch_keyword=' + title.replace(' ', '+')
     search_url = domain + search + payload
 
     r = requests.get(search_url)
     contents = r.text
 
     soup = BeautifulSoup(contents)
-    movie_url = soup.find('a', {'title': re.compile(title+'.*')})['href']
+    movie_url = soup.find('a', {'title': re.compile(title + '.*')})['href']
 
     ratings_page = requests.get(movie_url)
     contents = ratings_page.text
@@ -92,10 +95,23 @@ def get_bluray_rating(title):
 
     for i in range(len(cells)):
         if 'Video' in cells[i].get_text():
-            bluray_rating.video = cells[i+2].get_text()
+            bluray_rating.video = cells[i + 2].get_text()
         elif 'Audio' in cells[i].get_text():
-            bluray_rating.audio = cells[i+2].get_text()
+            bluray_rating.audio = cells[i + 2].get_text()
         elif 'Extras' in cells[i].get_text():
-            bluray_rating.extras = cells[i+2].get_text()
+            bluray_rating.extras = cells[i + 2].get_text()
 
     return bluray_rating
+
+
+def get_price(title):
+    access_key = os.environ.get('AWS_ACCESS_KEY_ID')
+    secret_key = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    associates_key = os.environ.get('AWS_ASSOCIATES_KEY')
+    amazon = bottlenose.Amazon(access_key, secret_key, 'statbrac-20', Version='2013-08-01')
+    product = amazon.lookup(ItemId='B00TU9UFTS')
+
+
+    return product.title
+
+

@@ -8,7 +8,13 @@ def index(request):
         form = SearchForm(request.GET)
 
         if form.is_valid():
-            return render(request, 'index.html', {'form': form, 'rt_rating': view_models.get_rt_rating(request.GET.__getitem__('movie_title').__str__()), 'bluray_rating': view_models.get_bluray_rating(request.GET.__getitem__('movie_title').__str__()), 'tech_specs': view_models.get_tech_spec(request.GET.__getitem__('movie_title').__str__())})
+            title = request.GET.__getitem__('movie_title').__str__()
+            rt_rating = view_models.get_rt_rating(title)
+            bluray_rating = view_models.get_bluray_rating(title)
+            tech_specs = view_models.get_tech_spec(title)
+            price = view_models.get_price(title)
+
+            return render(request, 'index.html', {'form': form, 'rt_rating': rt_rating, 'bluray_rating': bluray_rating, 'tech_specs': tech_specs, 'price': price})
 
     else:
         form = SearchForm()
