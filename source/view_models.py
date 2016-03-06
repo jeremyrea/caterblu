@@ -3,12 +3,11 @@ import re
 import os
 
 from amazon.api import AmazonAPI
-import bottlenose
 from bs4 import BeautifulSoup
 from .models import TechnicalSpecs
 from .models import BlurayRating
 from .models import RTRating
-
+from .models import Price
 
 def get_rt_rating(title):
     domain = "http://www.rottentomatoes.com/"
@@ -105,13 +104,18 @@ def get_bluray_rating(title):
 
 
 def get_price(title):
-    # access_key = os.environ.get('AWS_ACCESS_KEY_ID')
-    # secret_key = os.environ.get('AWS_SECRET_ACCESS_KEY')
-    # associates_key = os.environ.get('AWS_ASSOCIATES_KEY')
-    # amazon = bottlenose.Amazon(access_key, secret_key, 'statbrac-20', Version='2013-08-01')
-    # product = amazon.lookup(ItemId='B00TU9UFTS')
+    access_key = os.environ.get('AWS_ACCESS_KEY_ID')
+    secret_key = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    associates_tag = os.environ.get('AWS_ASSOCIATES_TAG')
 
+    amazon = AmazonAPI(access_key, secret_key, associates_tag, Region='CA', Version='2013-08-01')
 
-    return ""
+    product = amazon.search_n(1, Keywords=title, SearchIndex='All')[0]
+
+    price = Price()
+    price.price = product.price_and_currency
+    price.list_price = product.list_price
+
+    return price
 
 
