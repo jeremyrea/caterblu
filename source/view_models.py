@@ -105,13 +105,13 @@ def get_bluray_rating(title):
 
 
 def get_price(title):
-    access_key = os.environ.get('AWS_ACCESS_KEY_ID')
-    secret_key = os.environ.get('AWS_SECRET_ACCESS_KEY')
-    associates_key = os.environ.get('AWS_ASSOCIATES_KEY')
-    amazon = bottlenose.Amazon(access_key, secret_key, 'statbrac-20', Version='2013-08-01')
-    product = amazon.lookup(ItemId='B00TU9UFTS')
+    # access_key = os.environ.get('AWS_ACCESS_KEY_ID')
+    # secret_key = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    # associates_key = os.environ.get('AWS_ASSOCIATES_KEY')
+    # amazon = bottlenose.Amazon(access_key, secret_key, 'statbrac-20', Version='2013-08-01')
+    # product = amazon.lookup(ItemId='B00TU9UFTS')
 
 
-    return product.title
+    return ""
 
 
