@@ -6,15 +6,11 @@
 
 <div class="jumbotron text-center">
     <form action="/" method="get">
-        {% csrf_token %}
         <link rel='stylesheet' type='text/css' href="{% static '/static/style.css' %}" />
         {% for field in form %}
             {{ field|add_class:"focus" }}
         {% endfor %}
-        <!--<input type="submit" value="Search" class="btn btn-lg btn-default"/>-->
     </form>
-    <!--<a type="button" class="btn btn-lg btn-default" href="https://devcenter.heroku.com/articles/getting-started-with-python"><span class="glyphicon glyphicon-flash"></span> Getting Started with Python</a>-->
-    <!--<a type="button" class="btn btn-lg btn-primary" href="https://github.com/heroku/python-getting-started"><span class="glyphicon glyphicon-download"></span> Source on GitHub</a>-->
   </div>
 </div>
 <div class="container">

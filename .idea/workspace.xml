@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ad882bf-2add-432d-b56f-7908d40e3f68" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../bluray-finder/source/forms.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../bluray-finder/source/static/style.css" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../bluray-finder/hello/static/lang-logo.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../bluray-finder/hello/__init__.py" afterPath="" />
@@ -22,6 +21,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../bluray-finder/gettingstarted/settings.py" afterPath="$PROJECT_DIR$/../bluray-finder/gettingstarted/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../bluray-finder/gettingstarted/urls.py" afterPath="$PROJECT_DIR$/../bluray-finder/gettingstarted/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../bluray-finder/requirements.txt" afterPath="$PROJECT_DIR$/../bluray-finder/requirements.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../bluray-finder/source/forms.py" afterPath="$PROJECT_DIR$/../bluray-finder/source/forms.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../bluray-finder/source/templates/index.html" afterPath="$PROJECT_DIR$/../bluray-finder/source/templates/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../bluray-finder/source/views.py" afterPath="$PROJECT_DIR$/../bluray-finder/source/views.py" />
     </list>
@@ -46,11 +46,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.46272492">
       <split-first>
         <leaf>
-          <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/../bluray-finder/source/templates/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.9929078">
-                  <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+                <state vertical-scroll-proportion="-18.125">
+                  <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
                   <folding />
                 </state>
               </provider>
@@ -66,13 +66,13 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/../bluray-finder/source/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="18" column="336" selection-start-line="18" selection-start-column="336" selection-end-line="18" selection-end-column="336" />
+                <state vertical-scroll-proportion="0.31512606">
+                  <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
                   <folding>
-                    <element signature="e#0#15#0" expanded="true" />
+                    <element signature="e#0#35#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -95,7 +95,7 @@
           <file leaf-file-name="view_models.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/../bluray-finder/source/view_models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.54761904">
+                <state vertical-scroll-proportion="2.5210085">
                   <caret line="80" column="59" selection-start-line="80" selection-start-column="59" selection-end-line="80" selection-end-column="59" />
                   <folding>
                     <element signature="e#0#29#0" expanded="true" />
@@ -138,10 +138,10 @@
         <option value="$PROJECT_DIR$/../bluray-finder/requirements.txt" />
         <option value="$PROJECT_DIR$/../bluray-finder/gettingstarted/settings.py" />
         <option value="$PROJECT_DIR$/../bluray-finder/source/static/style.css" />
+        <option value="$PROJECT_DIR$/../bluray-finder/source/view_models.py" />
         <option value="$PROJECT_DIR$/../bluray-finder/source/forms.py" />
         <option value="$PROJECT_DIR$/../bluray-finder/source/views.py" />
         <option value="$PROJECT_DIR$/../bluray-finder/source/templates/index.html" />
-        <option value="$PROJECT_DIR$/../bluray-finder/source/view_models.py" />
       </list>
     </option>
   </component>
@@ -440,7 +440,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39180538" sideWeight="0.49010476" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3546735" sideWeight="0.49010476" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -679,14 +679,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../bluray-finder/source/static/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../bluray-finder/runtime.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -703,13 +695,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../bluray-finder/source/view_models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.5210085">
+          <caret line="80" column="59" selection-start-line="80" selection-start-column="59" selection-end-line="80" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../bluray-finder/venv/lib/python3.4/site-packages/django/forms/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3736018">
-          <caret line="155" column="16" selection-start-line="155" selection-start-column="11" selection-end-line="155" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.33193278">
+          <caret line="149" column="8" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="8" />
           <folding>
             <element signature="e#22#61#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../bluray-finder/source/static/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../bluray-finder/source/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.125">
+          <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -723,28 +741,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../bluray-finder/source/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="336" selection-start-line="18" selection-start-column="336" selection-end-line="18" selection-end-column="336" />
+        <state vertical-scroll-proportion="0.31512606">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../bluray-finder/source/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9929078">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../bluray-finder/source/view_models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54761904">
-          <caret line="80" column="59" selection-start-line="80" selection-start-column="59" selection-end-line="80" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
