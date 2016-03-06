@@ -1,7 +1,7 @@
-from bs4 import BeautifulSoup
-
 import requests
 import re
+
+from bs4 import BeautifulSoup
 from .models import TechnicalSpecs
 from .models import BlurayRating
 from .models import RTRating

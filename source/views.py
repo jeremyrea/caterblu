@@ -1,10 +1,8 @@
 from django.shortcuts import render
-from django.shortcuts import render_to_response
 from .forms import SearchForm
 from source import view_models
 
 
-# Create your views here.
 def index(request):
     if request.method == 'GET':
         form = SearchForm(request.GET)
