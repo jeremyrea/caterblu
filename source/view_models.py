@@ -1,6 +1,7 @@
 import requests
 import re
 import os
+import itunespy
 
 from amazon.api import AmazonAPI
 from bs4 import BeautifulSoup
@@ -118,4 +119,17 @@ def get_price(title):
 
     return price
 
+def get_artwork(title):
+    access_key = os.environ.get('AWS_ACCESS_KEY_ID')
+    secret_key = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    associates_tag = os.environ.get('AWS_ASSOCIATES_TAG')
 
+    amazon = AmazonAPI(access_key, secret_key, associates_tag, Region='CA', Version='2013-08-01')
+
+    product = amazon.search_n(1, Keywords=title, SearchIndex='All')[0]
+
+    # price = Price()
+    # price.price = product.price_and_currency
+    # price.list_price = product.list_price
+
+    return product.large_image_url

@@ -13,8 +13,9 @@ def index(request):
             bluray_rating = view_models.get_bluray_rating(title)
             tech_specs = view_models.get_tech_spec(title)
             price = view_models.get_price(title)
+            artwork = view_models.get_artwork(title)
 
-            return render(request, 'index.html', {'form': form, 'rt_rating': rt_rating, 'bluray_rating': bluray_rating, 'tech_specs': tech_specs, 'price': price})
+            return render(request, 'index.html', {'form': form, 'rt_rating': rt_rating, 'bluray_rating': bluray_rating, 'tech_specs': tech_specs, 'price': price, 'artwork': artwork})
 
     else:
         form = SearchForm()
