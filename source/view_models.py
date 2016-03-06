@@ -7,8 +7,10 @@ from .models import BlurayRating
 from .models import RTRating
 
 
-def get_rt_rating():
-    url = "http://www.rottentomatoes.com/m/the_martian/"
+def get_rt_rating(title):
+    domain = "http://www.rottentomatoes.com/"
+    query = "m/" + title.replace(' ', '_')
+    url = domain+query
 
     r = requests.get(url)
     contents = r.text
@@ -23,9 +25,9 @@ def get_rt_rating():
     return ratings
 
 
-def get_tech_spec():
+def get_tech_spec(title):
     url = 'http://www.imdb.com/xml/find?'
-    payload = {'json': '1', 'nr': 1, 'tt': 'on', 'q': 'the-martian'}
+    payload = {'json': '1', 'nr': 1, 'tt': 'on', 'q': title.replace(' ', '-')}
 
     response = requests.post(url, data=payload)
 
@@ -66,17 +68,17 @@ def build_specification(cell):
     return output
 
 
-def get_bluray_rating():
+def get_bluray_rating(title):
     domain = 'http://www.blu-ray.com/'
     search = 'search/?'
-    payload = 'quicksearch=1&quicksearch_keyword=The+Martian'
+    payload = 'quicksearch=1&quicksearch_keyword='+title.replace(' ', '+')
     search_url = domain + search + payload
 
     r = requests.get(search_url)
     contents = r.text
 
     soup = BeautifulSoup(contents)
-    movie_url = soup.find('a', {'title': re.compile('The Martian.*')})['href']
+    movie_url = soup.find('a', {'title': re.compile(title+'.*')})['href']
 
     ratings_page = requests.get(movie_url)
     contents = ratings_page.text

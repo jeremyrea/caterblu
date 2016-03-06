@@ -1,4 +1,5 @@
 from django.conf.urls import include, url
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 from django.contrib import admin
 admin.autodiscover()
@@ -11,5 +12,5 @@ import source.views
 
 urlpatterns = [
     url(r'^$', source.views.index, name='index'),
-    url(r'^admin/', include(admin.site.urls)),
+    staticfiles_urlpatterns()
 ]

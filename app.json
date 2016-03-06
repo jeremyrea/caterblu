@@ -1,5 +1,5 @@
 {
-  "name": "Python on Heroku example",
+  "name": "Blu-ray Finder",
   "description": "A barebones Python app, which can easily be deployed to Heroku.",
   "image": "heroku/python",
   "repository": "https://github.com/heroku/python-getting-started",
