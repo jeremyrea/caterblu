@@ -124,8 +124,15 @@ def get_artwork(title):
     movies = itunespy.search_movie(title)
     movie_id = movies[0].track_id
     
-    url = 'https://itunes.apple.com/lookup?id=' + str(movie_id)
-    response = requests.get(url)
+    url = 'https://itunes.apple.com/lookup?'
+    payload = {'id': str(movie_id)}
+    
+    '''Can also set country by adding
+            &country=$COUNTRY
+       in payload
+    '''
+    
+    response = requests.post(url, data=payload)
     data = response.json()
     image_address = data['results'][0]['artworkUrl100']
     image_address = image_address.replace('100x100', '500x500')
