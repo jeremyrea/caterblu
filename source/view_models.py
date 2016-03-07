@@ -19,7 +19,7 @@ def get_rt_rating(title):
     r = requests.get(url)
     contents = r.text
 
-    soup = BeautifulSoup(contents)
+    soup = BeautifulSoup(contents, 'lxml')
     items = []
     for item in soup.findAll(attrs={'itemprop': 'ratingValue'}):
         items.append(item.get_text().strip('%'))
@@ -46,7 +46,7 @@ def get_tech_spec(title):
     r = requests.get(url)
     contents = r.text
 
-    soup = BeautifulSoup(contents)
+    soup = BeautifulSoup(contents, 'lxml')
     table = soup.find('tbody')
 
     tech_specs = TechnicalSpecs()
@@ -81,12 +81,12 @@ def get_bluray_rating(title):
     r = requests.get(search_url)
     contents = r.text
 
-    soup = BeautifulSoup(contents)
+    soup = BeautifulSoup(contents, 'lxml')
     movie_url = soup.find('a', {'title': re.compile(title + '.*')})['href']
 
     ratings_page = requests.get(movie_url)
     contents = ratings_page.text
-    soup = BeautifulSoup(contents)
+    soup = BeautifulSoup(contents, 'lxml')
 
     review_section = soup.find('div', {'id': 'bluray_rating'})
     review_table = review_section.find('table')
