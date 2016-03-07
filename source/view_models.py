@@ -135,6 +135,7 @@ def get_artwork(title):
     response = requests.post(url, data=payload)
     data = response.json()
     image_address = data['results'][0]['artworkUrl100']
+    image_address = image_address.replace('http', 'https')
     image_address = image_address.replace('100x100', '500x500')
     
     return image_address    
