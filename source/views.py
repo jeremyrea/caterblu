@@ -17,12 +17,14 @@ def index(request):
             async_tech_specs = pool.apply_async(view_models.get_tech_spec, (title,))
             async_price = pool.apply_async(view_models.get_price, (title,))
             async_artwork = pool.apply_async(view_models.get_artwork, (title,))
+            pool.close()
             
             rt_rating = async_rt_rating.get()
             bluray_rating = async_bluray_rating.get()
             tech_specs = async_tech_specs.get()
             price = async_price.get()
             artwork = async_artwork.get()
+            pool.join()
 
             return render(request, 'index.html', {'form': form, 'rt_rating': rt_rating, 'bluray_rating': bluray_rating, 'tech_specs': tech_specs, 'price': price, 'artwork': artwork})
 
