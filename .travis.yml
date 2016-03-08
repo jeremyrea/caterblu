@@ -12,4 +12,4 @@ install:
   - pip install -q Django==$DJANGO_VERSION
 
 # command to run tests
-script: ./manage.py test
+script: ./source/test -v
