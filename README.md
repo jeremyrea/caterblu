@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/jeremyrea/murmuring-fjord-45036.svg?branch=master)](https://travis-ci.org/jeremyrea/murmuring-fjord-45036)
+[![Coverage Status](https://coveralls.io/repos/github/jeremyrea/murmuring-fjord-45036/badge.svg?branch=master)](https://coveralls.io/github/jeremyrea/murmuring-fjord-45036?branch=master)
+
 # python-getting-started
 
 A barebones Python app, which can easily be deployed to Heroku.
