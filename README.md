@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/jeremyrea/murmuring-fjord-45036.svg?branch=master)](https://travis-ci.org/jeremyrea/murmuring-fjord-45036)
+[ ![Codeship Status for jrmrea/murmuring-fjord-45036](https://codeship.com/projects/eb4468e0-c7a2-0133-82d3-4a552c5005e4/status?branch=master)](https://codeship.com/projects/139096)
 [![Coverage Status](https://coveralls.io/repos/github/jeremyrea/murmuring-fjord-45036/badge.svg?branch=master)](https://coveralls.io/github/jeremyrea/murmuring-fjord-45036?branch=master)
 [![Code Health](https://landscape.io/github/jeremyrea/murmuring-fjord-45036/master/landscape.svg?style=flat)](https://landscape.io/github/jeremyrea/murmuring-fjord-45036/master)
 [![Dependency Status](https://www.versioneye.com/user/projects/56de432edf573d00352c66a2/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56de432edf573d00352c66a2)
