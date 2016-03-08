@@ -10,4 +10,5 @@ bottlenose==0.6.3
 python-dateutil==2.5.0
 python-amazon-simple-product-api==2.0.1
 itunespy==1.5.3
+nose2==0.6.3
 
