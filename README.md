@@ -1,6 +1,6 @@
 [ ![Codeship Status for jrmrea/murmuring-fjord-45036](https://codeship.com/projects/eb4468e0-c7a2-0133-82d3-4a552c5005e4/status?branch=master)](https://codeship.com/projects/139096)
 [![Coverage Status](https://coveralls.io/repos/bitbucket/jrmrea/murmuring-fjord-45036/badge.svg?branch=master)](https://coveralls.io/bitbucket/jrmrea/murmuring-fjord-45036?branch=master)
-[![Code Health](https://landscape.io/github/jeremyrea/murmuring-fjord-45036/master/landscape.svg?style=flat)](https://landscape.io/github/jeremyrea/murmuring-fjord-45036/master)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/bbd70aa421be4401ad6f46e9e0d1055a)](https://www.codacy.com/app/jeremyrea/murmuring-fjord-45036)
 [![Dependency Status](https://www.versioneye.com/user/projects/56df23bcdf573d004c95f428/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56df23bcdf573d004c95f428)
 
 # python-getting-started
