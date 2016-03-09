@@ -1,12 +1,9 @@
 language: python
 python:
   - "3.5"
-env:
-  - DJANGO_VERSION=1.9.2
 
 install:
   - pip install -r requirements.txt
-  - pip install -q Django==$DJANGO_VERSION
 
 script: nose2 -v
 
