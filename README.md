@@ -24,3 +24,10 @@ $ gunicorn caterblu.wsgi
 The app should now be running on [localhost:8000](http://localhost:8000/).
 
 You will also have to supply `AWS_ACCESS_KEY_ID`, `AWS_ASSOCIATES_TAG`, `AWS_SECRET_ACCESS_KEY` in your environment variables in order to retrieve pricing information from AmazonAPI and a Django `SECRET_KEY`.
+
+## Tests
+
+You can run the tests usineg
+```sh
+$ nose2 -v
+```
