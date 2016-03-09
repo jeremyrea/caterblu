@@ -1,8 +1,8 @@
 {
-  "name": "Blu-ray Finder",
-  "description": "A barebones Python app, which can easily be deployed to Heroku.",
+  "name": "Caterblu",
+  "description": "A Django project to retrieve various informations on blu-ray releases.",
   "image": "heroku/python",
-  "repository": "https://github.com/heroku/python-getting-started",
+  "repository": "https://github.com/heroku/caterblu",
   "keywords": ["python", "django" ],
-  "addons": [ "heroku-postgresql" ]
+  "addons": []
 }
