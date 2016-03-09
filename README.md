@@ -9,7 +9,7 @@ A Django project to retrieve various informations on blu-ray releases.
 
 ## Running Locally
 
-Make sure you have the latest stable version of Python 3 with pip on your system.
+Make sure you have the latest stable version of `Python 3` with `pip` on your system.
 
 ```sh
 $ git clone git@github.com:jeremyrea/caterblu.git
@@ -18,7 +18,9 @@ $ cd caterblu
 $ pip install -r requirements.txt
 
 $ python3 manage.py collectstatic
-$ gunicorn gettingstarted.wsgi
+$ gunicorn caterblu.wsgi
 ```
 
 The app should now be running on [localhost:8000](http://localhost:8000/).
+
+You will also have to supply `AWS_ACCESS_KEY_ID`, `AWS_ASSOCIATES_TAG`, `AWS_SECRET_ACCESS_KEY` in your environment variables in order to retrieve pricing information from AmazonAPI and a Django `SECRET_KEY`.
