@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/jeremyrea/caterblu.svg?branch=master)](https://travis-ci.org/jeremyrea/caterblu)
-[![Coverage Status](https://coveralls.io/repos/bitbucket/jrmrea/murmuring-fjord-45036/badge.svg?branch=master)](https://coveralls.io/bitbucket/jrmrea/murmuring-fjord-45036?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/jeremyrea/caterblu/badge.svg?branch=master)](https://coveralls.io/github/jeremyrea/caterblu?branch=master)
 [![Code Health](https://landscape.io/github/jeremyrea/caterblu/master/landscape.svg?style=flat)](https://landscape.io/github/jeremyrea/caterblu/master)
 [![Dependency Status](https://www.versioneye.com/user/projects/56e03ea9df573d00352c68e3/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56e03ea9df573d00352c68e3)
 
@@ -27,7 +27,7 @@ You will also have to supply `AWS_ACCESS_KEY_ID`, `AWS_ASSOCIATES_TAG`, `AWS_SEC
 
 ## Tests
 
-You can run the tests usineg
+You can run the tests with:
 ```sh
 $ nose2 -v
 ```
