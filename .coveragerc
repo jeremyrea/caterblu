@@ -1,0 +1,7 @@
+[report]
+omit =
+    caterblu/*
+    manage.py
+    */__pycache__/*
+    */migrations/*
+    */templates/*
