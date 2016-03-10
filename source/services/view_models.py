@@ -5,10 +5,10 @@ import itunespy
 
 from amazon.api import AmazonAPI
 from bs4 import BeautifulSoup
-from .models import TechnicalSpecs
-from .models import BlurayRating
-from .models import RTRating
-from .models import Price
+from source.models.models import TechnicalSpecs
+from source.models.models import RTRating
+from source.models.models import BlurayRating
+from source.models.models import Price
 
 def get_rt_rating(title):
     domain = "http://www.rottentomatoes.com/"
