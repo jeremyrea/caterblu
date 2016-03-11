@@ -9,7 +9,7 @@ def index(request):
         form = SearchForm(request.GET)
 
         if form.is_valid():
-            title = request.GET.__getitem__('movie_title').__str__()
+            title = request.GET.__getitem__('title').__str__()
 
             cater_controller = CaterController(title)
             data = cater_controller.get_data()
