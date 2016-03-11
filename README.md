@@ -15,6 +15,9 @@ Make sure you have the latest stable version of `Python 3` with `pip` on your sy
 $ git clone git@github.com:jeremyrea/caterblu.git
 $ cd caterblu
 
+$ virtualenv venv
+$ source venv/bin/activate
+
 $ pip install -r requirements.txt
 
 $ python3 manage.py collectstatic
