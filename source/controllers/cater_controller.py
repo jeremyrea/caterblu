@@ -1,21 +1,34 @@
-import source.services.view_models as view_models
+import source.services
+
 from multiprocessing.pool import ThreadPool
+from source.services.amazon_service import AmazonService
+from source.services.bluray_service import BlurayService
+from source.services.imdb_service import ImdbService
+from source.services.itunes_service import ItunesService
+from source.services.rotten_tomatoes_service import RottenTomatoesService
+
 
 class CaterController:
 
-    THREAD_COUNT = 5
+    __THREAD_COUNT = 5
 
-    def __init__(self, movie_title):
-        self.movie_title = movie_title
+    def __init__(self, title):
+        self.title = title
 
     def get_data(self):
-        pool = ThreadPool(processes=self.THREAD_COUNT)
+        amazon_service = AmazonService(self.title)
+        bluray_service = BlurayService(self.title)
+        imdb_service = ImdbService(self.title)
+        itunes_service = ItunesService(self.title)
+        rotten_tomatoes_service = RottenTomatoesService(self.title)
 
-        async_rt_rating = pool.apply_async(view_models.get_rt_rating, (self.movie_title,))
-        async_bluray_rating = pool.apply_async(view_models.get_bluray_rating, (self.movie_title,))
-        async_tech_specs = pool.apply_async(view_models.get_tech_spec, (self.movie_title,))
-        async_price = pool.apply_async(view_models.get_price, (self.movie_title,))
-        async_artwork = pool.apply_async(view_models.get_artwork, (self.movie_title,))
+        pool = ThreadPool(processes=self.__THREAD_COUNT)
+
+        async_rt_rating = pool.apply_async(rotten_tomatoes_service.get_rt_rating)
+        async_bluray_rating = pool.apply_async(bluray_service.get_bluray_rating)
+        async_tech_specs = pool.apply_async(imdb_service.get_tech_spec)
+        async_price = pool.apply_async(amazon_service.get_price)
+        async_artwork = pool.apply_async(itunes_service.get_artwork)
         pool.close()
 
         rt_rating = async_rt_rating.get()
@@ -25,4 +38,10 @@ class CaterController:
         artwork = async_artwork.get()
         pool.join()
 
-        return {'rt_rating': rt_rating, 'bluray_rating': bluray_rating, 'tech_specs': tech_specs, 'price': price, 'artwork': artwork}
+        data = {'rt_rating': rt_rating,
+                'bluray_rating': bluray_rating,
+                'tech_specs': tech_specs,
+                'price': price,
+                'artwork': artwork}
+
+        return data
