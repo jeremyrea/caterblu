@@ -1,5 +1,3 @@
-import source.services
-
 from multiprocessing.pool import ThreadPool
 from source.services.amazon_service import AmazonService
 from source.services.bluray_service import BlurayService
