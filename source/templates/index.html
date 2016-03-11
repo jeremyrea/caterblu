@@ -10,34 +10,62 @@
             {{ field|add_class:"focus" }}
         {% endfor %}
     </form>
-  </div>
 </div>
 <div class="container">
-    <ul>
-        <li>Rotten Tomatoes</li>
-        <ul>
-            <li>{{ data.rt_rating }}</li>
+  <div class="row">
+    <div class="col-md-6">
+      <img src={{data.artwork}}>
+      <span class="label label-success">Price: {{ data.price.price }}</span><span class="label label-danger">Listing: {{ data.price.list_price }}</span>
+      <br></br>
+    </div>
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><center>Ratings</center></h3>
+        </div>
+        <div class="panel-body">
+          <div class="col-md-6">
+            <center>Critics Score: {{ data.rt_rating.critics_score }}</center>
+          </div>
+          <div class="col-md-6">
+            <center>Audience Score: {{ data.rt_rating.audience_score }}</center>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><center>Blu-ray release</center></h3>
+        </div>
+        <div class="panel-body">
+          <div class="col-md-4">
+            <center>Video: {{ data.bluray_rating.video }}</center>
+          </div>
+          <div class="col-md-4">
+            <center>Audio: {{ data.bluray_rating.audio }}</center>
+          </div>
+          <div class="col-md-4">
+            <center>Extras: {{ data.bluray_rating.extras }}</center>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><center>Technical specs</center></h3>
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item">Negative Format: {{ data.tech_specs.negative_format }}</li>
+          <li class="list-group-item">Cinematographic Process: {{ data.tech_specs.cinematographic_process }}</li>
         </ul>
-        <li>Blu-ray review</li>
-        <ul>
-            <li>{{ data.bluray_rating }}</li>
-        </ul>
-        <li>Technical specs</li>
-        <ul>
-            <li>{{ data.tech_specs }}</li>
-        </ul>
-        <li>Price</li>
-        <ul>
-            <li>{{ data.price }}</li>
-        </ul>
-        <li>Artwork</li>
-        <ul>
-            <img src={{data.artwork}}>
-        </ul>
-    </ul>
-
+      </div>
+    </div>
+  </div>
+  <div class="row">
     <div class="alert alert-info text-center" role="alert">
       If the result is not what you expected, please submit an issue on GitHub
     </div>
+  </div>
+</div>
+<div class="container">
+
 </div>
 {% endblock %}
