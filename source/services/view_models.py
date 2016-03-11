@@ -3,12 +3,12 @@ import re
 import os
 import itunespy
 
+from source.models.bluray_rating import BlurayRating
+from source.models.price import Price
+from source.models.rt_rating import RTRating
+from source.models.technical_specs import TechnicalSpecs
 from amazon.api import AmazonAPI
 from bs4 import BeautifulSoup
-from source.models.models import TechnicalSpecs
-from source.models.models import RTRating
-from source.models.models import BlurayRating
-from source.models.models import Price
 
 def get_rt_rating(title):
     domain = "http://www.rottentomatoes.com/"
