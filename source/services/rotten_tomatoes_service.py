@@ -7,6 +7,7 @@ from source.models.rt_rating import RTRating
 class RottenTomatoesService:
 
     __URL = 'http://www.rottentomatoes.com/m/'
+    __SEPERATOR = '_'
 
     def __init__(self, title):
         self.title = title
@@ -21,7 +22,7 @@ class RottenTomatoesService:
         return self.get_ratings(soup)
 
     def format_title(self):
-        return self.title.replace(' ', '_')
+        return self.title.replace(' ', self.__SEPERATOR)
 
     def get_ratings(self, soup):
         items = []

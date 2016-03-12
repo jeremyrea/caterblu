@@ -9,6 +9,7 @@ class ImdbService:
 
     __API_URL = 'http://www.imdb.com/xml/find?'
     __URL = 'http://www.imdb.com/title/'
+    __SEPERATOR = '-'
 
     def __init__(self, title):
         self.title = title
@@ -39,7 +40,7 @@ class ImdbService:
         return movie_id
 
     def format_title(self):
-        return self.title.replace(' ', '-')
+        return self.title.replace(' ', self.__SEPERATOR)
 
     def get_specs(self, rows):
         tech_specs = TechnicalSpecs()
