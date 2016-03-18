@@ -54,8 +54,30 @@
             <h3 class="panel-title"><center>Technical specs</center></h3>
           </div>
           <ul class="list-group">
-            <li class="list-group-item">Negative Format: {{ data.tech_specs.negative_format }}</li>
-            <li class="list-group-item">Cinematographic Process: {{ data.tech_specs.cinematographic_process }}</li>
+            <li class="list-group-item">
+              <table>
+                <tr>
+                  <th>Negative Format: </th>
+                  <td>
+                    {% for spec in data.tech_specs.negative_format %}
+                      {{ spec }}<br>
+                    {% endfor %}
+                  </td>
+                </tr>
+              </table>
+            </li>
+            <li class="list-group-item">
+              <table>
+                <tr>
+                  <th>Cinematographic Process: </th>
+                  <td>
+                    {% for spec in data.tech_specs.cinematographic_process %}
+                      {{ spec }}<br>
+                    {% endfor %}
+                  </td>
+                </tr>
+              </table>
+            </li>
           </ul>
         </div>
       </div>
