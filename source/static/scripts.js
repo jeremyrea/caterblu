@@ -1,11 +1,15 @@
 $(window).on("load", function() {
-  $(".jumbotron").addClass("focus");
+  $(':input:not(:button)').each(function(index, element) {
+    if (element.value != '') {
+      $(".jumbotron").addClass("focus");
+    }
+  });
 });
 
 function hideSmallContainer() {
   $.ajax({
     url: "/?",
     type: "get",
-    data:{title: $("#search_form").value()}
+    data:{title: $("#search_form").value()},
   });
 }
