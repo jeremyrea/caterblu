@@ -1,37 +1,47 @@
+.bigContainer {
+  overflow:hidden;
+  height: 900px;
+}
+.smallContainer {
+    position: relative;
+    top: -650px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    z-index: -1;
+    -webkit-transition: top 1s;
+    -moz-transition: top 1s;
+    -o-transition: top 1s;
+    transition: top 1s;
+}
+.jumbotron:focus + .smallContainer,
+.jumbotron.focus + .smallContainer {
+    top: 280px;
+}
 .jumbotron {
-    background: #3896D6;
+    background: #F5F5F5;
     color: white;
-}
-.jumbotron .btn-primary {
-    background: #845ac7;
-    border-color: #845ac7
-}
-.jumbotron .btn-primary:hover {
-    background: #7646c1
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    overflow:hidden;
 }
 .jumbotron p {
     color: #d9ccee;
     max-width: 75%;
     margin: 1em auto 2em
 }
-.navbar+.jumbotron {
-    margin-top: -20px
-}
-.jumbotron .lang-logo {
-    display: block;
-    background: #b01302;
-    border-radius: 50%;
-    overflow: hidden;
-    width: 100px;
-    height: 100px;
-    margin: auto;
-    border: 2px solid white
-}
-.jumbotron .lang-logo img {
-    max-width: 100%
-}
 .nav {
+  /*position: fixed;*/
   color: white;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 input[type="text"] {
