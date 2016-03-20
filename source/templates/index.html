@@ -3,16 +3,19 @@
 {% load widget_tweaks %}
 
 {% block content %}
-<div class="bigContainer">
+<script type="text/javascript" status="hidden">
+  $('body').data('status', {{ status }});
+</script>
+<div class="big-container">
   <div class="jumbotron text-center">
-      <form id="#search_form" action="/" onsubmit="hideSmallContainer(); return false;" method="get">
+      <form id="search-form" action="/" method="get">
         <link rel='stylesheet' type='text/css' href="{% static '/static/style.css' %}" />
         {% for field in form %}
             {{ field|add_class:"focus" }}
         {% endfor %}
       </form>
   </div>
-  <div class="smallContainer">
+  <div id="data-display" class="small-container">
     <div class="row">
       <div class="col-md-6">
         <img src={{data.artwork}}>
@@ -87,6 +90,9 @@
         If the result is not what you expected, please submit an issue on GitHub
       </div>
     </div>
+  </div>
+  <div id="search-error" class="alert alert-danger" role="alert">
+    <strong>Oh Snap!</strong> Looks like something went wront on our end, we couldn't find your movie.
   </div>
 </div>
 {% endblock %}

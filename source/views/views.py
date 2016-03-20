@@ -12,11 +12,13 @@ def index(request):
             title = request.GET.__getitem__('title').__str__()
 
             cater_controller = CaterController(title)
-            data = cater_controller.get_data()
-
-            return render(request, 'index.html', {'form': form, 'data': data})
+            try:
+                data = cater_controller.get_data()
+                return render(request, 'index.html', {'status': 200, 'form': form, 'data': data})
+            except ValueError:
+                return render(request, 'index.html', {'status': 204, 'form': form})
 
     else:
         form = SearchForm()
 
-    return render(request, 'index.html', {'form': form})
+    return render(request, 'index.html', {'status': 200, 'form': form})

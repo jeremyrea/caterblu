@@ -1,8 +1,8 @@
-.bigContainer {
+.big-container {
   overflow:hidden;
   height: 900px;
 }
-.smallContainer {
+.small-container {
     position: relative;
     top: -650px;
     margin-left: auto;
@@ -13,9 +13,10 @@
     -moz-transition: top 1s;
     -o-transition: top 1s;
     transition: top 1s;
+    display: none;
 }
-.jumbotron:focus + .smallContainer,
-.jumbotron.focus + .smallContainer {
+.jumbotron:focus + .small-container,
+.jumbotron.focus + .small-container {
     top: 280px;
 }
 .jumbotron {
@@ -81,4 +82,13 @@ table {
 }
 table th {
   width: 40%;
+}
+
+.alert-danger {
+  position: relative;
+  top: 280px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  display: none;
 }

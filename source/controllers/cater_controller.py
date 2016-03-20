@@ -29,12 +29,15 @@ class CaterController:
         async_artwork = pool.apply_async(itunes_service.get_artwork)
         pool.close()
 
-        rt_rating = async_rt_rating.get()
-        bluray_rating = async_bluray_rating.get()
-        tech_specs = async_tech_specs.get()
-        price = async_price.get()
-        artwork = async_artwork.get()
-        pool.join()
+        try:
+            rt_rating = async_rt_rating.get()
+            bluray_rating = async_bluray_rating.get()
+            tech_specs = async_tech_specs.get()
+            price = async_price.get()
+            artwork = async_artwork.get()
+            pool.join()
+        except:
+            raise ValueError("Oops, something went wrong")
 
         data = {'rt_rating': rt_rating,
                 'bluray_rating': bluray_rating,
