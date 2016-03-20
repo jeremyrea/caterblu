@@ -14,7 +14,7 @@ class BlurayService:
 
     def get_bluray_rating(self):
         search_title = self.format_title()
-        payload = 'quicksearch=1&quicksearch_keyword=' + search_title
+        payload = 'quicksearch=1&section=bluraymovies&quicksearch_keyword=' + search_title
         search_url = self.__URL + payload
 
         movie_page = requests.get(search_url)
