@@ -8,7 +8,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 80%;
-    z-index: -1;
+    z-index: 0;
     -webkit-transition: top 1s;
     -moz-transition: top 1s;
     -o-transition: top 1s;

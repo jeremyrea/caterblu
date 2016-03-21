@@ -35,6 +35,9 @@
               <center>Audience Score: {{ data.rt_rating.audience_score }}</center>
             </div>
           </div>
+          <ul class="list-group">
+            <li class="list-group-item">Read more on <a href="{{ data.rt_rating.link }}">Rotten Tomatoes</a></li>
+          </ul>
         </div>
         <div class="panel panel-default">
           <div class="panel-heading">
@@ -51,6 +54,9 @@
               <center>Extras: {{ data.bluray_rating.extras }}</center>
             </div>
           </div>
+          <ul class="list-group">
+            <li class="list-group-item">Read more at <a href="{{ data.bluray_rating.link }}">Blu-ray.com</a></li>
+          </ul>
         </div>
         <div class="panel panel-default">
           <div class="panel-heading">
@@ -81,6 +87,7 @@
                 </tr>
               </table>
             </li>
+            <li class="list-group-item">See full specs on <a href="{{ data.tech_specs.link }}">IMDb</a></li>
           </ul>
         </div>
       </div>

@@ -26,7 +26,10 @@ class ImdbService:
         data_table = soup.find('tbody')
         rows = data_table.find_all('td')
 
-        return self.get_specs(rows)
+        specs = self.get_specs(rows)
+        specs.link = technical_page.url
+
+        return specs
 
     def get_movie_id(self):
         search_title = self.format_title()

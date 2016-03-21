@@ -19,7 +19,10 @@ class RottenTomatoesService:
         contents = movie_page.text
         soup = BeautifulSoup(contents, 'lxml')
 
-        return self.get_ratings(soup)
+        ratings = self.get_ratings(soup)
+        ratings.link = search_url
+
+        return ratings
 
     def format_title(self):
         return self.title.replace(' ', self.__SEPERATOR)
