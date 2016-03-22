@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "postinstall": "./node_modules/bower/bin/bower install"
+    "preinstall": "./node_modules/bower/bin/bower --verbose install"
 },
   "dependencies": {
    "bower": "latest"
