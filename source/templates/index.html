@@ -19,7 +19,9 @@
     <div class="row">
       <div class="col-md-6">
         <img src={{data.artwork}}>
-        <span class="label label-success">Price: {{ data.price.price }}</span><span class="label label-danger">Listing: {{ data.price.list_price }}</span>
+        <p>
+        <span class="label label-success">Price: {{ data.price.price.1 }}${{ data.price.price.0 }}</span><span class="label label-danger">Listing: {{ data.price.list_price.1 }}${{ data.price.list_price.0 }}</span>
+        <p>
         <a href="{{ data.price.link }}">
           <img alt="Buy" src="static/buy1._V192207739_.gif">
         </a>
