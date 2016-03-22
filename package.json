@@ -1,7 +1,6 @@
 {
   "scripts": {
     "preinstall": "./node_modules/bower/bin/bower --verbose install",
-    "preinstall": "./manage.py collectstatic"
 },
   "dependencies": {
    "bower": "latest"
