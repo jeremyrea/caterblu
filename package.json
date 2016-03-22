@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "preinstall": "./node_modules/bower/bin/bower --verbose install",
-},
+    "preinstall": "./node_modules/bower/bin/bower --verbose install"
+  },
   "dependencies": {
    "bower": "latest"
  }
