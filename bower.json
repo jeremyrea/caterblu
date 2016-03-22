@@ -16,6 +16,6 @@
     "tests"
   ],
   "dependencies": {
-    "jquery.inputfit.js": "jquery-inputfit#*"
+    "jquery.inputfit.js": "latest",
   }
 }

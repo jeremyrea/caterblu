@@ -135,6 +135,7 @@ STATIC_URL = '/static/'
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
+    os.path.join(PROJECT_ROOT, 'bower_components'),
 )
 
 # Simplified static file serving.
@@ -142,3 +143,4 @@ STATICFILES_DIRS = (
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 STATICTILES_FINDER = 'djangobower.finders.BowerFinder'
+BOWER_COMPONENTS_ROOT = os.path.join(PROJECT_ROOT, '')
