@@ -1,9 +1,14 @@
 $(document).ready(function(){
   displayProperDiv();
+
+  $(window).resize(function() {
+    resizeBigContainer();
+  }).resize();
 });
 
 $(window).on("load", function() {
   dropResult();
+  resizeBigContainer();
 });
 
 function displayProperDiv() {
@@ -23,4 +28,11 @@ function dropResult() {
       $(".jumbotron").addClass("focus");
     }
   });
+}
+
+function resizeBigContainer() {
+  var jh = $('.jumbotron').height();
+  var ch = $('.small-container').height();
+  var h = jh+ch + 200;
+  $('.big-container').height(h);
 }

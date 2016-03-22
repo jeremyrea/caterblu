@@ -1,6 +1,5 @@
 .big-container {
   overflow:hidden;
-  height: 950px;
 }
 .small-container {
     position: relative;
@@ -13,7 +12,7 @@
     -moz-transition: top 1s;
     -o-transition: top 1s;
     transition: top 1s;
-    display: none;
+    display: table;
 }
 .jumbotron:focus + .small-container,
 .jumbotron.focus + .small-container {
@@ -46,9 +45,11 @@
 }
 
 input[type="text"] {
-  display: block;
+  position: relative;
   margin-left: auto;
   margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
   width: 50%;
   height: 100px;
   font-family: sans-serif;
