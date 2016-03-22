@@ -1,7 +1,7 @@
 {
   "engines": {
-    "node": "*",
-    "npm": "*"
+    "node": "5.9.0",
+    "npm": "3.7.3"
   },
   "dependencies": {
     "bower": "latest"
