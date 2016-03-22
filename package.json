@@ -1,8 +1,12 @@
 {
+  "engines": {
+    "node": "*",
+    "npm": "*"
+  },
   "scripts": {
     "preinstall": "./node_modules/bower/bin/bower --verbose install"
   },
   "dependencies": {
-   "bower": "latest"
+    "bower": "latest"
  }
 }
