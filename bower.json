@@ -1,0 +1,21 @@
+{
+  "name": "caterblu",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Jeremy Rea <jeremyrea@fastmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/jeremyrea/caterblu",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery.inputfit.js": "jquery-inputfit#*"
+  }
+}
