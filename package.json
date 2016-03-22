@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "preinstall": "bash ./preinstall.sh"
+    "preinstall": "python3 manage.py bower install",
+    "postinstall": "python3 manage.py collectstatic"
 },
   "dependencies": {
    "bower": "latest"
