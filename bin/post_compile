@@ -1,4 +1,4 @@
 #!/bin/bash
 export PATH=/app/.heroku/node/bin:$PATH
-./manage.py bower install
+bower --verbose install
 ./manage.py collectstatic --noinput
