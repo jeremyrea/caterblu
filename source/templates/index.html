@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% load widget_tweaks %}
+{% load bower %}
 
 {% block content %}
 <script type="text/javascript" status="hidden">
@@ -8,12 +9,15 @@
 </script>
 <div class="big-container">
   <div class="jumbotron text-center">
-      <form id="search-form" action="/" method="get">
-        <link rel='stylesheet' type='text/css' href="{% static '/static/style.css' %}" />
-        {% for field in form %}
-            {{ field|add_class:"focus" }}
-        {% endfor %}
-      </form>
+    <form id="search-form" action="/" method="get">
+      <link rel='stylesheet' type='text/css' href="{% static '/static/style.css' %}" />
+      {% for field in form %}
+          {{ field|add_class:"focus" }}
+      {% endfor %}
+    </form>
+    <script type="text/javascript">
+      $('#id_title').inputfit();
+    </script>
   </div>
   <div id="data-display" class="small-container">
     <div class="row">

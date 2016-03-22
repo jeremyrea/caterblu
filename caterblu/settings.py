@@ -10,8 +10,6 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
 import os
-# import dj_database_url
-
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -38,7 +36,12 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'source',
-    'widget_tweaks'
+    'widget_tweaks',
+    'djangobower'
+)
+
+BOWER_INSTALLED_APPS = (
+    'jquery-inputfit',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -137,3 +140,5 @@ STATICFILES_DIRS = (
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+STATICTILES_FINDER = 'djangobower.finders.BowerFinder'
