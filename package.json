@@ -4,7 +4,7 @@
     "npm": "*"
   },
   "scripts": {
-    "preinstall": "./node_modules/bower/bin/bower --verbose install"
+    "postinstall": "./node_modules/bower/bin/bower --verbose install"
   },
   "dependencies": {
     "bower": "latest"

@@ -5,9 +5,4 @@
   "repository": "https://github.com/heroku/caterblu",
   "keywords": ["python", "django" ],
   "addons": [],
-  "buildpacks": [{
-        "url": "https://github.com/heroku/heroku-buildpack-python"
-    }, {
-        "url": "https://github.com/apiaryio/heroku-buildpack-nodejs-grunt"
-  }]
 }
