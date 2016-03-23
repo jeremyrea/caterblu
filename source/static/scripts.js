@@ -1,4 +1,6 @@
 $(document).ready(function(){
+  // Trigger inputfit()
+  $("#id_title").trigger(jQuery.Event("keydown"));
   displayProperDiv();
 
   $(window).resize(function() {
