@@ -35,6 +35,7 @@ function dropResult() {
 function resizeBigContainer() {
   var jh = $('.jumbotron').height();
   var ch = $('.small-container').height();
-  var h = jh+ch + 200;
+  var eh = $('#search-error').height();
+  var h = jh+ch+eh+220;
   $('.big-container').height(h);
 }

@@ -88,6 +88,7 @@ table th {
 .alert-danger {
   position: relative;
   top: 280px;
+  margin-top:auto;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
