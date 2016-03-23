@@ -9,7 +9,11 @@ A Django project to retrieve various informations on blu-ray releases.
 
 ## Running Locally
 
-Make sure you have the latest stable version of `Python 3` with `pip` on your system.
+Make sure you have the latest stable version of `Python3` with `pip` on your system.
+
+This project also uses `Bower` for front-end dependency management. Follow the [installation instructions](http://bower.io/#install-bower) to get set up.
+
+Then follow these steps:
 
 ```sh
 $ git clone git@github.com:jeremyrea/caterblu.git
@@ -19,8 +23,9 @@ $ virtualenv venv
 $ source venv/bin/activate
 
 $ pip install -r requirements.txt
+$ python3 manage.py bower -v 0 install
 
-$ python3 manage.py collectstatic
+$ python3 manage.py collectstatic --no-input
 $ gunicorn caterblu.wsgi
 ```
 
