@@ -1,7 +1,9 @@
 import os
+import re
 
 from amazon.api import AmazonAPI
 from source.models.price import Price
+
 
 class AmazonService:
 
@@ -18,10 +20,12 @@ class AmazonService:
                                 Version=self.__API_VERSION)
 
     def get_price(self):
-        products = self.amazon.search_n(1,
-                                        Keywords=self.title,
+        products = self.amazon.search_n(10,
+                                        Keywords=self.title + ' [Blu-ray]',
                                         SearchIndex='All')
-        product = products[0]
+
+        ranked_products = self.rank_products(products)
+        product = ranked_products[0]
 
         price = Price()
         price.price = product.price_and_currency
@@ -29,6 +33,24 @@ class AmazonService:
         price.link = product.offer_url
 
         return price
+
+    def rank_products(self, products):
+        ranked_products = sorted(products, key=lambda x: self.product_score(x), reverse=True)
+
+        return ranked_products
+
+    def product_score(self, p):
+        title = str(p.title)
+        title = title.replace('[Blu-ray]', '')
+        title = title.replace('(Bilingual)', '')
+        title = title.replace('(Region Free)', '')
+        title = title.strip(' ')
+        size_diff = abs(len(title) - len(self.title))
+
+        p_score = 1 if size_diff == 0 else 0
+        p_score += 1 if re.search('[Blu\-ray]', p.title) else p_score
+
+        return p_score
 
     def get_amazon_env_variables(self):
         access_key = os.environ.get('AWS_ACCESS_KEY_ID')
