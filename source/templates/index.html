@@ -2,6 +2,7 @@
 {% load static %}
 {% load widget_tweaks %}
 {% load bower %}
+{% load countries %}
 
 {% block content %}
 <script type="text/javascript" status="hidden">
@@ -11,10 +12,7 @@
   <div class="jumbotron text-center">
     <form id="search-form" action="/" method="get">
       <link rel='stylesheet' type='text/css' href="{% static '/static/style.css' %}" />
-      {% for field in form %}
-          {{ field|add_class:"focus" }}
-      {% endfor %}
-    </form>
+        {{ form.title|add_class:"focus" }}
     <script type="text/javascript">
       $('#id_title').inputfit();
     </script>
@@ -24,6 +22,7 @@
       <div class="col-md-6">
         <img src={{data.artwork}}>
         <p>
+        {{ form.country }}</form>
         <span class="label label-success">Price: {{ data.price.price.1 }}${{ data.price.price.0 }}</span><span class="label label-danger">Listing: {{ data.price.list_price.1 }}${{ data.price.list_price.0 }}</span>
         <p>
         <a href="{{ data.price.link }}">

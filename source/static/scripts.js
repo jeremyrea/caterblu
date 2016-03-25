@@ -25,7 +25,7 @@ function displayProperDiv() {
 }
 
 function dropResult() {
-  $(':input:not(:button)').each(function(index, element) {
+  $(':input:not(:button, select)').each(function(index, element) {
     if (element.value != '') {
       $(".jumbotron").addClass("focus");
     }

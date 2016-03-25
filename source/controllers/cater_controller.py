@@ -10,11 +10,12 @@ class CaterController:
 
     __THREAD_COUNT = 5
 
-    def __init__(self, title):
+    def __init__(self, title, country):
         self.title = title
+        self.country = country
 
     def get_data(self):
-        amazon_service = AmazonService(self.title)
+        amazon_service = AmazonService(self.title, self.country)
         bluray_service = BlurayService(self.title)
         imdb_service = ImdbService(self.title)
         itunes_service = ItunesService(self.title)

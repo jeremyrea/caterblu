@@ -37,7 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'source',
     'widget_tweaks',
-    'djangobower'
+    'djangobower',
+    'django_countries'
 )
 
 BOWER_INSTALLED_APPS = (
@@ -144,3 +145,7 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 STATICTILES_FINDER = 'djangobower.finders.BowerFinder'
 BOWER_COMPONENTS_ROOT = os.path.join(PROJECT_ROOT, '')
+
+# django-countries settings
+COUNTRIES_ONLY =  [('US', 'United States'), 'CA']
+COUNTRIES_FIRST = ['US']

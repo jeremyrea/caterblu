@@ -9,14 +9,15 @@ class AmazonService:
 
     __API_VERSION = '2013-08-01'
 
-    def __init__(self, title):
+    def __init__(self, title, country):
         self.title = title
+        self.country = country
 
         env_vars = self.get_amazon_env_variables()
         self.amazon = AmazonAPI(env_vars['access_key'],
                                 env_vars['secret_key'],
                                 env_vars['associates_tag'],
-                                Region='CA',
+                                Region=self.country,
                                 Version=self.__API_VERSION)
 
     def get_price(self):
