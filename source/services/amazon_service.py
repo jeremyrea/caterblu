@@ -29,8 +29,8 @@ class AmazonService:
         product = ranked_products[0]
 
         price = Price()
-        price.price = product.price_and_currency
-        price.list_price = product.list_price
+        price.price = list(product.price_and_currency)
+        price.list_price = list(product.list_price)
         price.link = product.offer_url
 
         return price

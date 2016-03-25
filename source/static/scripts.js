@@ -6,6 +6,20 @@ $(document).ready(function(){
   $(window).resize(function() {
     resizeBigContainer();
   }).resize();
+
+  $("#id_country").change(function() {
+      $.ajax({
+        'url' : '/api/price',
+        'type' : 'GET',
+        'data' : $('#search-form').serialize(),
+        'success' : function(data) {
+          var obj = $.parseJSON(data);
+          $('#price').text("Price: " + obj._Price__price[1] + "$" + obj._Price__price[0]);
+          $('#listing').text("Listing: " + obj._Price__list_price[1] + "$" + obj._Price__list_price[0]);
+          $("#buy-button").attr("href", obj._Price__link);
+        }
+      });
+  });
 });
 
 $(window).on("load", function() {

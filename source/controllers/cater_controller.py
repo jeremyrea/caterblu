@@ -47,3 +47,9 @@ class CaterController:
                 'artwork': artwork}
 
         return data
+
+    def get_price(self):
+        amazon_service = AmazonService(self.title, self.country)
+        price = amazon_service.get_price()
+
+        return price

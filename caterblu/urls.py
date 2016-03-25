@@ -8,5 +8,6 @@ admin.autodiscover()
 
 urlpatterns = [
     url(r'^$', source.views.views.index, name='index'),
+    url(r'^api/price', source.views.views.price, name='price'),
     staticfiles_urlpatterns()
 ]
