@@ -5,7 +5,7 @@ whitenoise==2.0.6
 requests==2.9.1
 BeautifulSoup4==4.4.1
 django-widget-tweaks==1.4.1
-lxml==3.5.0
+lxml==3.6.0
 bottlenose==0.6.3
 python-dateutil==2.5.1
 python-amazon-simple-product-api==2.0.1
