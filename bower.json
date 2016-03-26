@@ -17,5 +17,6 @@
   ],
   "dependencies": {
     "jquery.inputfit.js": "latest",
+    "js-cookie": "latest"
   }
 }

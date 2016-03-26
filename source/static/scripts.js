@@ -1,6 +1,12 @@
 $(document).ready(function(){
   // Trigger inputfit()
   $("#id_title").trigger(jQuery.Event("keydown"));
+
+  var country_cookie = Cookies.get('country')
+  if(typeof country_cookie != 'undefined') {
+    $("#id_country").val(country_cookie);
+  }
+
   displayProperDiv();
 
   $(window).resize(function() {
@@ -8,17 +14,18 @@ $(document).ready(function(){
   }).resize();
 
   $("#id_country").change(function() {
-      $.ajax({
-        'url' : '/api/price',
-        'type' : 'GET',
-        'data' : $('#search-form').serialize(),
-        'success' : function(data) {
-          var obj = $.parseJSON(data);
-          $('#price').text("Price: " + obj._Price__price[1] + "$" + obj._Price__price[0]);
-          $('#listing').text("Listing: " + obj._Price__list_price[1] + "$" + obj._Price__list_price[0]);
-          $("#buy-button").attr("href", obj._Price__link);
-        }
-      });
+    $.ajax({
+      'url' : '/api/price',
+      'type' : 'GET',
+      'data' : $('#search-form').serialize(),
+      'success' : function(data) {
+        var obj = $.parseJSON(data);
+        $('#price').text("Price: " + obj._Price__price[1] + "$" + obj._Price__price[0]);
+        $('#listing').text("Listing: " + obj._Price__list_price[1] + "$" + obj._Price__list_price[0]);
+        $("#buy-button").attr("href", obj._Price__link);
+      }
+    });
+    Cookies.set('country', $('#id_country').val());
   });
 });
 

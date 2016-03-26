@@ -43,6 +43,7 @@ INSTALLED_APPS = (
 
 BOWER_INSTALLED_APPS = (
     'jquery-inputfit',
+    'js-cookie',
 )
 
 MIDDLEWARE_CLASSES = (
