@@ -25,7 +25,15 @@ class RottenTomatoesService:
         return ratings
 
     def format_title(self):
-        return self.title.replace(' ', self.__SEPERATOR)
+        formatted_title = self.title
+
+        if formatted_title.startswith('The '):
+            formatted_title = formatted_title.replace('The ', '', 1)
+
+        formatted_title = formatted_title.replace(' ', self.__SEPERATOR)
+        formatted_title = formatted_title.replace('-', '')
+
+        return formatted_title
 
     def get_ratings(self, soup):
         items = []
