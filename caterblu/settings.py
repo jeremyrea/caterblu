@@ -135,7 +135,7 @@ STATICFILES_DIRS = (
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATICTILES_FINDER = 'djangobower.finders.BowerFinder'
 BOWER_COMPONENTS_ROOT = os.path.join(PROJECT_ROOT, '')
