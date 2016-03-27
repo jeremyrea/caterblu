@@ -29,6 +29,8 @@ class RottenTomatoesService:
 
         if formatted_title.startswith('The '):
             formatted_title = formatted_title.replace('The ', '', 1)
+        if formatted_title.startswith('A '):
+            formatted_title = formatted_title.replace('A ', '', 1)
         if "'s" in formatted_title:
             formatted_title = formatted_title.replace("'s", 's')
 
