@@ -38,6 +38,8 @@ class RottenTomatoesService:
         formatted_title = formatted_title.replace('-', '')
         formatted_title = formatted_title.replace(':', '')
         formatted_title = formatted_title.replace(',', '')
+        formatted_title = formatted_title.replace('.', '')
+        formatted_title = formatted_title.replace('&', 'and')
 
         return formatted_title
 
