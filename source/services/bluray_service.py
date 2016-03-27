@@ -21,10 +21,13 @@ class BlurayService:
         contents = movie_page.text
         soup = BeautifulSoup(contents, 'lxml')
 
-        movie_url = self.get_movie_url(soup)
-        movie_page = requests.get(movie_url)
-        contents = movie_page.text
-        soup = BeautifulSoup(contents, 'lxml')
+        if 'Blu-ray.com - Search ' in soup.find('title'):
+            movie_url = self.get_movie_url(soup)
+            movie_page = requests.get(movie_url)
+            contents = movie_page.text
+            soup = BeautifulSoup(contents, 'lxml')
+        else:
+            movie_url = search_url
 
         review_rows = self.get_bluray_review_cells(soup)
 
