@@ -13,7 +13,7 @@ class BlurayService:
         self.title = title
 
     def get_bluray_rating(self):
-        search_title = self.format_title()
+        search_title = self.format_search_title()
         payload = 'quicksearch=1&section=bluraymovies&quicksearch_keyword=' + search_title
         search_url = self.__URL + payload
 
@@ -33,24 +33,25 @@ class BlurayService:
 
         return ratings
 
-    def format_title(self):
+    def format_search_title(self):
         return self.title.replace(' ', '+')
 
     def get_movie_url(self, soup):
-        movie_element = soup.find('a', {'title': re.compile(self.title + '.*')})
-        movie_url = ''
-        if(movie_element):
-            movie_url = movie_element['href']
+        formatted_title = self.format_title()
 
-        return movie_url
+        movies = []
+        for a in soup.find_all('a', title=True):
+            if(formatted_title in a['title']):
+                movies.append(a['href'])
 
-        ### This would allow to get retrieve multiple release versions
-        # movies = []
-        # for a in soup.find_all('a', title=True):
-        #     if(self.title in a['title']):
-        #         movies.append(a['href'])
-        #
-        # return movies[0]
+        return movies[0]
+
+    def format_title(self):
+        formatted_title = self.title
+        if (' Part ') in self.title:
+            formatted_title = self.title.replace(' Part ', ': Part ', 1)
+
+        return formatted_title
 
     def get_bluray_review_cells(self, soup):
         review_section = soup.find('div', {'id': 'bluray_rating'})
