@@ -50,6 +50,8 @@ class BlurayService:
         formatted_title = self.title
         if (' Part ') in self.title:
             formatted_title = self.title.replace(' Part ', ': Part ', 1)
+        if "'s" in formatted_title:
+            formatted_title = formatted_title.replace("'", 's')
 
         return formatted_title
 
