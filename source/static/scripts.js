@@ -27,6 +27,10 @@ $(document).ready(function(){
     });
     Cookies.set('country', $('#id_country').val());
   });
+
+  $('#search-form').submit(function() {
+    $("#id_title").val($.trim($("#id_title").val()));
+  });
 });
 
 $(window).on("load", function() {
