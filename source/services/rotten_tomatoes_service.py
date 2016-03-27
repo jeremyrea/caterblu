@@ -34,6 +34,7 @@ class RottenTomatoesService:
 
         formatted_title = formatted_title.replace(' ', self.__SEPERATOR)
         formatted_title = formatted_title.replace('-', '')
+        formatted_title = formatted_title.replace(':', '')
 
         return formatted_title
 
