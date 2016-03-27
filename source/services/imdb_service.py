@@ -38,7 +38,11 @@ class ImdbService:
         response = requests.post(self.__API_URL, data=payload)
 
         movie_info = response.json()
-        movie_id = movie_info['title_popular'][0]['id']
+
+        try:
+            movie_id = movie_info['title_popular'][0]['id']
+        except:
+            movie_id = movie_info['title_approx'][0]['id']
 
         return movie_id
 
