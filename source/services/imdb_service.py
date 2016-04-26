@@ -7,8 +7,9 @@ from source.models.technical_specs import TechnicalSpecs
 
 class ImdbService:
 
-    __API_URL = 'http://www.imdb.com/xml/find?'
     __URL = 'http://www.imdb.com/title/'
+    __API_URL = 'http://www.imdb.com/xml/find?'
+    __OMDB_URL = 'http://www.omdbapi.com/?'
     __SEPERATOR = '-'
 
     def __init__(self, title):
@@ -32,13 +33,13 @@ class ImdbService:
         return specs
 
     def get_artwork(self):
-        search_url = self.__URL + str(self.id)
-        movie_page = requests.get(search_url)
+        payload = {'i': self.id, 'plot': 'short', 'r': 'json'}
+        response = requests.post(self.__OMDB_URL, params=payload)
 
-        contents = movie_page.text
-        soup = BeautifulSoup(contents, 'lxml')
+        movie_info = response.json()
+        artwork_url = movie_info['Poster']
 
-        return self.get_artwork_url(soup)
+        return self.format_artwork_url(artwork_url)
 
 
     def get_movie_id(self):
@@ -80,20 +81,5 @@ class ImdbService:
 
         return output
 
-    def get_artwork_url(self, soup):
-        poster_div = soup.find('div', {'class': 'poster'})
-        image_tag = poster_div.find('img')
-        url = image_tag.get('src')
-
-        return self.format_artwork_url(url)
-
     def format_artwork_url(self, url):
-        formatted_url = url
-        formatted_url = formatted_url.replace('UY268_', 'UY500_')
-        formatted_url = formatted_url.replace('_CR4,', '_CR0,')
-        formatted_url = formatted_url.replace('_CR6,', '_CR0,')
-        formatted_url = formatted_url.replace(',182,', ',500,')
-        formatted_url = formatted_url.replace(',268_', ',500_')
-        formatted_url = formatted_url.replace('_CR0,', '_UY0,')
-
-        return formatted_url
+        return url.replace('_SX300', '_SX333')
