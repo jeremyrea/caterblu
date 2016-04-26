@@ -26,6 +26,7 @@ def index(request):
 
     return render(request, 'index.html', {'status': 200, 'form': form})
 
+
 def price(request):
     if request.method == 'GET':
         title = request.GET.__getitem__('title')
