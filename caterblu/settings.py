@@ -141,5 +141,5 @@ STATICTILES_FINDER = 'djangobower.finders.BowerFinder'
 BOWER_COMPONENTS_ROOT = os.path.join(PROJECT_ROOT, '')
 
 # django-countries settings
-COUNTRIES_ONLY =  [('US', 'United States'), 'CA']
+COUNTRIES_ONLY = [('US', 'United States'), 'CA']
 COUNTRIES_FIRST = ['US']
