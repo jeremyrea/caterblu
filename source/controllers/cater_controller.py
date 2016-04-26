@@ -15,30 +15,33 @@ class CaterController:
         self.country = country
 
     def get_data(self):
+        pool = ThreadPool(processes=self.__THREAD_COUNT)
+
         amazon_service = AmazonService(self.title, self.country)
         bluray_service = BlurayService(self.title)
         imdb_service = ImdbService(self.title)
-        itunes_service = ItunesService(self.title)
         rotten_tomatoes_service = RottenTomatoesService(self.title)
-
-        pool = ThreadPool(processes=self.__THREAD_COUNT)
+        try:
+            itunes_service = ItunesService(self.title)
+            async_artwork = pool.apply_async(itunes_service.get_artwork)
+        except LookupError:
+            async_artwork = pool.apply_async(imdb_service.get_artwork)
 
         async_rt_rating = pool.apply_async(rotten_tomatoes_service.get_rt_rating)
         async_bluray_rating = pool.apply_async(bluray_service.get_bluray_rating)
         async_tech_specs = pool.apply_async(imdb_service.get_tech_spec)
         async_price = pool.apply_async(amazon_service.get_price)
-        async_artwork = pool.apply_async(itunes_service.get_artwork)
         pool.close()
 
-        try:
-            rt_rating = async_rt_rating.get()
-            bluray_rating = async_bluray_rating.get()
-            tech_specs = async_tech_specs.get()
-            price = async_price.get()
-            artwork = async_artwork.get()
-            pool.join()
-        except:
-            raise ValueError("Oops, something went wrong")
+        # try:
+        rt_rating = async_rt_rating.get()
+        bluray_rating = async_bluray_rating.get()
+        tech_specs = async_tech_specs.get()
+        price = async_price.get()
+        artwork = async_artwork.get()
+        pool.join()
+        # except:
+        #     raise ValueError("Oops, something went wrong")
 
         data = {'rt_rating': rt_rating,
                 'bluray_rating': bluray_rating,

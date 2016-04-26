@@ -31,6 +31,16 @@ class ImdbService:
 
         return specs
 
+    def get_artwork(self):
+        search_url = self.__URL + str(self.id)
+        movie_page = requests.get(search_url)
+
+        contents = movie_page.text
+        soup = BeautifulSoup(contents, 'lxml')
+
+        return self.get_artwork_url(soup)
+
+
     def get_movie_id(self):
         search_title = self.format_title()
         payload = {'json': '1', 'nr': 1, 'tt': 'on', 'q': search_title}
@@ -69,3 +79,21 @@ class ImdbService:
             output.append(re.sub('\s+', ' ', spec))
 
         return output
+
+    def get_artwork_url(self, soup):
+        poster_div = soup.find('div', {'class': 'poster'})
+        image_tag = poster_div.find('img')
+        url = image_tag.get('src')
+
+        return self.format_artwork_url(url)
+
+    def format_artwork_url(self, url):
+        formatted_url = url
+        formatted_url = formatted_url.replace('UY268_', 'UY500_')
+        formatted_url = formatted_url.replace('_CR4,', '_CR0,')
+        formatted_url = formatted_url.replace('_CR6,', '_CR0,')
+        formatted_url = formatted_url.replace(',182,', ',500,')
+        formatted_url = formatted_url.replace(',268_', ',500_')
+        formatted_url = formatted_url.replace('_CR0,', '_UY0,')
+
+        return formatted_url
