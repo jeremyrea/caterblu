@@ -8,6 +8,7 @@ class RottenTomatoesService:
 
     __URL = 'http://www.rottentomatoes.com/m/'
     __SEPERATOR = '_'
+    __PAGE_NOT_FOUND = 404
 
     def __init__(self, title):
         self.title = title
@@ -18,7 +19,7 @@ class RottenTomatoesService:
         search_url = self.__URL + self.formatted_title
         movie_page = requests.get(search_url)
 
-        if 404 == movie_page.status_code:
+        if self.__PAGE_NOT_FOUND == movie_page.status_code:
             self.format_title_second_pass()
             search_url = self.__URL + self.formatted_title
             movie_page = requests.get(search_url)
