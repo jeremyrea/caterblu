@@ -1,5 +1,4 @@
 import requests
-import re
 
 from bs4 import BeautifulSoup
 from source.models.bluray_rating import BlurayRating
