@@ -1,4 +1,4 @@
-Django==1.9.4
+Django==1.9.5
 gunicorn==19.4.5
 psycopg2==2.6.1
 whitenoise==3.0
@@ -7,7 +7,7 @@ BeautifulSoup4==4.4.1
 django-widget-tweaks==1.4.1
 lxml==3.6.0
 bottlenose==0.6.3
-python-dateutil==2.5.1
+python-dateutil==2.5.3
 python-amazon-simple-product-api==2.0.1
 itunespy==1.5.3
 nose2==0.6.4
