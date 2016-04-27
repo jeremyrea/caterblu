@@ -9,7 +9,6 @@ class ImdbService:
 
     __URL = 'http://www.imdb.com/title/'
     __API_URL = 'http://www.imdb.com/xml/find?'
-    __OMDB_URL = 'http://www.omdbapi.com/?'
     __SEPERATOR = '-'
 
     def __init__(self, title):

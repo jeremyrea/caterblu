@@ -3,7 +3,7 @@ from source.services.amazon_service import AmazonService
 from source.services.bluray_service import BlurayService
 from source.services.imdb_service import ImdbService
 from source.services.tmdb_service import TmdbService
-from source.services.rotten_tomatoes_service import RottenTomatoesService
+from source.services.omdb_service import OmdbService
 
 
 class CaterController:
@@ -19,10 +19,10 @@ class CaterController:
         bluray_service = BlurayService(self.title)
         imdb_service = ImdbService(self.title)
         tmdb_service = TmdbService(imdb_service.get_id())
-        rotten_tomatoes_service = RottenTomatoesService(self.title)
+        omdb_service = OmdbService(imdb_service.get_id())
 
         pool = ThreadPool(processes=self.__THREAD_COUNT)
-        async_rt_rating = pool.apply_async(rotten_tomatoes_service.get_rt_rating)
+        async_rt_rating = pool.apply_async(omdb_service.get_rt_rating)
         async_bluray_rating = pool.apply_async(bluray_service.get_bluray_rating)
         async_tech_specs = pool.apply_async(imdb_service.get_tech_spec)
         async_artwork = pool.apply_async(tmdb_service.get_artwork)

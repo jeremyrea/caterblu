@@ -1,7 +1,7 @@
 class RTRating(object):
     def __init__(self, ratings):
         self.__critics_score = ratings[0]
-        self.__audience_score = ratings[2]
+        self.__audience_score = ratings[1]
         self.__link = None
 
     @property
