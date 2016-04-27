@@ -38,8 +38,9 @@ class ImdbService:
 
         movie_info = response.json()
         artwork_url = movie_info['Poster']
+        resized_artwork_url = self.format_artwork_url(artwork_url)
 
-        return self.format_artwork_url(artwork_url)
+        return resized_artwork_url
 
 
     def get_movie_id(self):
@@ -82,4 +83,4 @@ class ImdbService:
         return output
 
     def format_artwork_url(self, url):
-        return url.replace('_SX300', '_SX333')
+        return url.replace('_SX300', '_UY460_UY0,0,333,460_AL_')
