@@ -16,8 +16,11 @@ class OmdbService:
         response = requests.post(self.__API_URL, params=payload)
         movie_info = response.json()
 
-        ratings = []
-        ratings.append(movie_info['tomatoMeter'])
-        ratings.append(movie_info['tomatoUserMeter'])
+        scores = []
+        scores.append(movie_info['tomatoMeter'])
+        scores.append(movie_info['tomatoUserMeter'])
 
-        return RTRating(ratings)
+        rt_rating = RTRating(scores)
+        rt_rating.link = movie_info['tomatoURL']
+
+        return rt_rating
