@@ -5,7 +5,7 @@ import requests
 class TmdbService:
 
     __TMDB_API = 'https://api.themoviedb.org/3/movie/'
-    __IMAGE_URL = 'https://image.tmdb.org/t/p/w396'
+    __IMAGE_URL = 'https://image.tmdb.org/t/p/w342'
 
     def __init__(self, movie_id):
         self.id = movie_id
