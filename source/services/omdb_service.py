@@ -1,6 +1,5 @@
 import requests
 
-from bs4 import BeautifulSoup
 from source.models.rt_rating import RTRating
 
 
