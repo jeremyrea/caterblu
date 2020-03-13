@@ -1,7 +1,7 @@
 Django==1.9.5
 gunicorn==19.4.5
 whitenoise==3.0
-requests==2.9.1
+requests==2.20.0
 BeautifulSoup4==4.4.1
 django-widget-tweaks==1.4.1
 lxml==3.6.0
